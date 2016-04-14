@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ artist-mode
+ org-mode
+ revert-buffer
+ rgrep
+ replace-string
+ delete-file
+ load-theme
+)
+
+;; ----- smex-data -----
+(
+ (load-theme . 6)
+ (package-list-packages . 1)
+ (rgrep . 13)
+ (magit-log . 2)
+ (clojure-mode . 2)
+ (replace-string . 2)
+ (cider . 3)
+ (paredit-mode . 1)
+ (cider-quit . 3)
+ (projectile-find-file . 1)
+ (dired . 1)
+ (package-install . 4)
+ (pcomplete . 1)
+ (revert-buffer . 7)
+ (delete-file . 1)
+ (artist-mode . 3)
+ (org-mode . 2)
+)

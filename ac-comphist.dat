@@ -1,0 +1,110 @@
+((("summaries" .
+   [2 0 0 0 0 0 0 0 0])
+  ("report-orders-by-id" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("report-orders" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("foo" .
+   [2 0 0])
+  ("s" .
+   [1])
+  (".toLowerCase" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("external2-orders" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("data/external2-orders" .
+   [0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0])
+  ("parse-external1-data" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("merchant" .
+   [1 0 0 0 0 0 0 0])
+  ("as" .
+   [1 0])
+  ("field" .
+   [1 0 0 0 0])
+  ("external1-orders" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ascending" .
+   [2 0 0 0 0 0 0 0 0])
+  ("def" .
+   [5 0 0])
+  ("data/external1-orders" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("code-puzzle.data/merchant-orders" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("code-puzzle.data" .
+   [0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0])
+  ("append" .
+   [1 0 0 0 0 0])
+  ("entry" .
+   [4 0 0 0 0])
+  (":as" .
+   [1 0 0])
+  ("summary-name" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("data-name" .
+   [1 0 0 0 0 0 0 0 0])
+  ("order-id" .
+   [1 0 0 0 0 0 0 0])
+  ("orders-map" .
+   [5 0 0 0 0 0 0 0 0 0])
+  ("orders-summary" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("orders" .
+   [8 0 0 0 0 0])
+  ("key-orders" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("orders-list" .
+   [9 0 0 0 0 0 0 0 0 0 0])
+  ("..." .
+   [1 0 0])
+  ("merchant-summary" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("merchant-data" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("merchant-orders" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("runa-summary" .
+   [2 0 0 0 0 0 0 0 0 0 0 0])
+  ("run" .
+   [2 0 0])
+  ("runa-orders" .
+   [3 0 0 0 0 0 0 0 0 0 0])
+  ("true" .
+   [1 0 0 0])
+  ("runa-discount-dollars" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("runa" .
+   [3 0 0 0])
+  ("report" .
+   [2 0 0 0 0 0])
+  ("BigInteger." .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("200M" .
+   [1 0 0 0])
+  ("external2" .
+   [2 0 0 0 0 0 0 0 0])
+  ("external1" .
+   [2 0 0 0 0 0 0 0 0])
+  ("100.0M" .
+   [2 0 0 0 0 2])
+  ("100.M" .
+   [1 0 0 0 0])
+  ("read-decimal-or-zero" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("0.0M" .
+   [1 0 0 0])
+  ("catch" .
+   [1 0 0 0 0])
+  ("try" .
+   [1 0 0])
+  ("BigDecimal." .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("BigDecimal" .
+   [1 0 0 0 0 2 0 0 0 0])
+  ("data/external-orders" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("setq" .
+   [1 0 0 0])
+  ("runa-impl-segments" .
+   [0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0])))
