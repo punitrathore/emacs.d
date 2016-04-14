@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- shell-script-mode
- rename-file
- load-theme
- rgrep
  replace-string
+ rgrep
  org-mode
  query-replace
+ paredit-mode
+ magit-status
+ load-theme
 )
 
 ;; ----- smex-data -----
@@ -15,14 +15,14 @@
  (package-list-packages . 96)
  (package-install . 13)
  (eval-buffer . 70)
- (load-theme . 166)
+ (load-theme . 165)
  (rgrep . 3008)
  (clojure-jack-in . 29)
  (color-theme-twilight . 12)
  (slime-connect . 1082)
  (sieve-mode . 1)
  (slime . 11)
- (replace-string . 693)
+ (replace-string . 694)
  (paredit-mode . 341)
  (color-theme-snow . 2)
  (color-theme-arjen . 3)
@@ -119,7 +119,7 @@
  (nrepl . 721)
  (auto-complete . 1)
  (nrepl-jack-in . 62)
- (rename-file . 81)
+ (rename-file . 80)
  (xml-mode . 21)
  (slime-compile-file . 5)
  (query-replace . 37)
@@ -261,7 +261,7 @@
  (yas-minor-mode . 1)
  (smartparens-mode . 2)
  (compilation-shell-minor-mode . 1)
- (shell-script-mode . 6)
+ (shell-script-mode . 5)
  (artist-mode . 15)
  (write-file . 1)
  (cider-display-current-connection-info . 2)
