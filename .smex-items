@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ delete-file
  replace-string
  rgrep
  org-mode
  query-replace
  paredit-mode
  magit-status
- load-theme
 )
 
 ;; ----- smex-data -----
@@ -95,7 +95,7 @@
  (find-file . 3)
  (kill-buffer . 4)
  (clojure-mode . 79)
- (delete-file . 130)
+ (delete-file . 133)
  (mc/edit-lines . 15)
  (yank-rectangle . 13)
  (mc/mark-all-like-this . 5)
