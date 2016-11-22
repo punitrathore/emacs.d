@@ -3,7 +3,7 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
 (custom-set-variables
@@ -22,6 +22,65 @@
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(org-startup-truncated nil)
+ '(safe-local-variable-values
+   (quote
+    ((eval progn
+           (put
+            (quote defannotation)
+            (quote clojure-doc-string-elt)
+            2)
+           (put
+            (quote defendpoint)
+            (quote clojure-doc-string-elt)
+            3)
+           (put
+            (quote defsetting)
+            (quote clojure-doc-string-elt)
+            2)
+           (put
+            (quote setting/defsetting)
+            (quote clojure-doc-string-elt)
+            2)
+           (define-clojure-indent
+             (api-let 2)
+             (assert 1)
+             (assoc 1)
+             (auto-parse 1)
+             (catch-api-exceptions 0)
+             (check 1)
+             (checkp 1)
+             (context 2)
+             (create-database-definition 1)
+             (ex-info 1)
+             (execute-query 1)
+             (execute-sql! 2)
+             (expect 0)
+             (expect-expansion 0)
+             (expect-when-testing-engine 1)
+             (expect-with-all-engines 0)
+             (expect-with-engine 1)
+             (expect-with-engines 1)
+             (let-400 1)
+             (let-404 1)
+             (let-500 1)
+             (match 1)
+             (match-$ 1)
+             (post-select 1)
+             (pre-cascade-delete 1)
+             (pre-insert 1)
+             (pre-update 1)
+             (project 1)
+             (qp-expect-with-engines 1)
+             (render-file 1)
+             (resolve-private-vars 1)
+             (select 1)
+             (sync-in-context 2)
+             (when-testing-engine 1)
+             (with-redefs-fn 1)))
+     (haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4)
+     (whitespace-line-column . 80)
+     (lexical-binding . t))))
  '(send-mail-function (quote smtpmail-send-it)))
 
 ;; (custom-set-faces
@@ -34,19 +93,21 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages
-  '(starter-kit
-    starter-kit-lisp
-    starter-kit-eshell
-    starter-kit-bindings
-    ac-slime
-    markdown-mode
-    maxframe
-    js2-mode))
+;; (defvar my-packages
+;;   '(
+;;     ;;starter-kit
+;;     starter-kit-lisp
+;;     starter-kit-eshell
+;;     starter-kit-bindings
+;;     ac-slime
+;;     markdown-mode
+;;     maxframe
+;;     js2-mode
+;;     ))
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;; (dolist (p my-packages)
+;;   (when (not (package-installed-p p))
+;;     (package-install p)))
 
 ;;; Maximize Frame
 ;; (maximize-frame)
@@ -74,26 +135,30 @@
 ;; (require 'rainbow-delimiters)
 ;;  (global-rainbow-delimiters-mode)
 
+;;;;;; starting comment
 
-;; source .zshrc
-(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
-  (setenv "PATH" path)
-  (setq exec-path 
-        (append
-         (split-string-and-unquote path ":")
-         exec-path)))
+;; ;; source .zshrc
+;; (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+;;   (setenv "PATH" path)
+;;   (setq exec-path 
+;;         (append
+;;          (split-string-and-unquote path ":")
+;;          exec-path)))
 
-;; from http://stackoverflow.com/questions/10171280/how-to-launch-gui-emacs-from-command-line-in-osx
-;;========================================
-;; start the emacsserver that listens to emacsclient
-;; (server-start)
+;; ;; from http://stackoverflow.com/questions/10171280/how-to-launch-gui-emacs-from-command-line-in-osx
+;; ;;========================================
+;; ;; start the emacsserver that listens to emacsclient
+;; ;; (server-start)
 
-;; zsh shell using inferior-shell
-(setq explicit-shell-file-name "/bin/zsh")
-(setq shell-file-name "zsh")
-(setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
-(setenv "SHELL" shell-file-name)
-(add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
+;; ;; zsh shell using inferior-shell
+;; (setq explicit-shell-file-name "/bin/zsh")
+;; (setq shell-file-name "zsh")
+;; (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+;; (setenv "SHELL" shell-file-name)
+;; (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
+
+;;;;;;;; ending comment 
+
 
 ;; ;; Multiple Cursors Keybindings
 (require 'multiple-cursors)
@@ -138,3 +203,27 @@
  )
 
 (load-theme 'atom-dark)
+
+(setq ring-bell-function 'ignore)
+
+(global-visual-line-mode t)
+
+(setq exec-path (append exec-path '("/usr/local/bin")))
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
+;; advanced scala mode
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+(require 'ox-reveal)
+
+(setq org-reveal-root "file:///Users/punit/Projects/fun/reveal.js")
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(add-hook 'sh-mode-hook (lambda () (setq indent-tabs-mode t)))
+
+;; intero mode for haskell files - https://commercialhaskell.github.io/intero/
+(add-hook 'haskell-mode-hook 'intero-mode)
+

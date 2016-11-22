@@ -120,10 +120,10 @@
      (set-face-foreground 'diff-added "green4")
      (set-face-foreground 'diff-removed "red3")))
 
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green4")
-     (set-face-foreground 'magit-diff-del "red3")))
+;; (eval-after-load 'magit
+;;   '(progn
+;;      (set-face-foreground 'magit-diff-add "green4")
+;;      (set-face-foreground 'magit-diff-del "red3")))
 
 ;; Get around the emacswiki spam protection
 (eval-after-load 'oddmuse

@@ -54,22 +54,10 @@
        (constrain-to-field nil orig-pos t)))))
 (global-set-key (kbd "M-SPC") 'multi-line-just-one-space)
 
-(defun setup-clojure-indentation-rules ()
-  (dolist (x '((case . 1)
-               (defmethod . defn)
-               (condp . 2)
-               (are . let)
-               (doto . defn)))
-    (put (car x)
-         'clojure-indent-function
-         (if (numberp (cdr x))
-             (cdr x)
-           (get (cdr x) 'clojure-indent-function)))))
-
 (defun clojure-mode-hook ()
   (setq indent-tabs-mode nil
         clojure-mode-use-backtracking-indent t)
-  (setup-clojure-indentation-rules))
+  )
 
 ;; creates as many colums possible with 85 chars - Thanks to Ram
 (defun 3col-view ()
@@ -87,11 +75,18 @@
 (global-set-key (kbd "s-r") 'revert-buffer)
 
 ;; use js2-mode for javascript files
-(autoload 'js2-mode "js2" nil t)
+;; (autoload 'js2-mode "js2" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rt$" . html-mode))
+;; (setq js2-basic-offet 2)
+;; (setq js2-use-font-lock-faces t)
+
+;; Javascript from - https://truongtx.me/2014/02/23/set-up-javascript-development-environment-in-emacs
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.rt$" . html-mode))
-(setq js2-basic-offet 2)
-(setq js2-use-font-lock-faces t)
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+;; (define-key js-mode-map "{" 'paredit-open-curly)
+;; (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
@@ -184,6 +179,22 @@
  '(js2-basic-offset 2)  
  '(js2-bounce-indent-p t))
 
-(add-to-list 'auto-mode-alist '("\\.elixir2\\'" . elixir-mode))
+;; (add-to-list 'auto-mode-alist '("\\.elixir2\\'" . elixir-mode))
+;; (require 'elixir-mode)
 
-(require 'elixir-mode)
+(setq org-startup-indented t)
+
+(setq helm-dash-docsets '("Redis" "Haskell" "Clojure" "React" "NodeJS"))
+
+
+(defun linum-update-window-scale-fix (win)
+  "fix linum for scaled text"
+  (set-window-margins win
+          (ceiling (* (if (boundp 'text-scale-mode-step)
+                  (expt text-scale-mode-step
+                    text-scale-mode-amount) 1)
+              (if (car (window-margins))
+                  (car (window-margins)) 1)
+              ))))
+
+(advice-add #'linum-update-window :after #'linum-update-window-scale-fix)
